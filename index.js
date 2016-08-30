@@ -140,6 +140,20 @@ class Router extends React.Component {
 
   componentDidMount() {
     this.props.actions.init(this.initial);
+
+    let self = this,
+        _BackAndroid = BackAndroid,
+        backAction = () => {
+            if (this.props.router.routes.length > 1) {
+              this.props.actions.pop();
+              return true;
+            } else {
+              _BackAndroid.removeEventListener('hardwareBackPress', backAction);
+              return false;
+            }
+        };
+
+    BackAndroid.addEventListener('hardwareBackPress', backAction);
   }
 
   componentWillReceiveProps(nextProps) {
