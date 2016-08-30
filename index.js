@@ -1,4 +1,4 @@
-import React, { Navigator, StyleSheet, View } from 'react-native';
+import React, { Navigator, StyleSheet, View, BackAndroid } from 'react-native';
 import Animations from './src/Animations';
 import { NavBar } from './src/NavBar';
 import TabBar from './src/TabBar';
